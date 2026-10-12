@@ -1,0 +1,502 @@
+<script setup lang="ts">
+const categories = ['Neu', 'Sale', 'Elektronik', 'Mode', 'Home', 'Sport']
+
+const featuredProducts = [
+  {
+    name: 'Wireless Headset',
+    price: '89,99 €',
+    tag: 'Top Seller',
+    accent: 'purple'
+  },
+  {
+    name: 'Minimal Lamp',
+    price: '49,99 €',
+    tag: 'Neu',
+    accent: 'gold'
+  },
+  {
+    name: 'Sneaker Pro',
+    price: '119,99 €',
+    tag: 'Popular',
+    accent: 'green'
+  },
+  {
+    name: 'Smart Watch',
+    price: '199,99 €',
+    tag: 'Bestseller',
+    accent: 'blue'
+  }
+]
+</script>
+
+<template>
+  <div class="shop-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">N</div>
+        <span class="brand-name">NOVA</span>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Categories</a>
+        <a href="#">Deals</a>
+      </nav>
+
+      <div class="top-actions">
+        <button class="ghost-btn">Suche</button>
+        <button class="cart-btn">Warenkorb (3)</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Frühjahrsangebot</p>
+        <h1>Shop smarter.</h1>
+        <p class="hero-text">
+          Entdecke moderne Produkte für den Alltag – stilvoll, funktional und günstig.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn">Jetzt shoppen</button>
+          <button class="secondary-btn">Mehr erfahren</button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>12k+</strong>
+            <span>Bestellungen</span>
+          </div>
+          <div>
+            <strong>4.9/5</strong>
+            <span>Kundenbewertung</span>
+          </div>
+          <div>
+            <strong>48h</strong>
+            <span>Versand</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Featured product card">
+        <div class="visual-card large-card">
+          <span class="mini-tag">Featured</span>
+          <div class="product-glow" />
+          <div class="product-box">
+            <div class="box-shape" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-strip">
+      <div class="section-head">
+        <h2>Kategorien</h2>
+      </div>
+
+      <div class="category-list">
+        <button v-for="category in categories" :key="category" class="category-pill">
+          {{ category }}
+        </button>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="section-head split">
+        <h2>Beliebt</h2>
+        <a href="#">Alle ansehen</a>
+      </div>
+
+      <div class="product-grid">
+        <article v-for="product in featuredProducts" :key="product.name" class="product-card">
+          <div class="product-image" :class="product.accent">
+            <span class="product-badge">{{ product.tag }}</span>
+          </div>
+          <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <div class="product-meta">
+              <span class="price">{{ product.price }}</span>
+              <button>In den Warenkorb</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo-banner">
+      <div>
+        <p>Limited Time Offer</p>
+        <h3>Bis zu 30% Rabatt auf ausgewählte Artikel</h3>
+      </div>
+      <button class="primary-btn">Jetzt sparen</button>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+.shop-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+  color: #111827;
+  background: #f6f7fb;
+}
+
+.topbar,
+.hero,
+.category-strip,
+.products-section,
+.promo-banner {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #111827, #7c3aed);
+  color: white;
+}
+
+.brand-name {
+  letter-spacing: 0.12em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.96rem;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ghost-btn,
+.secondary-btn {
+  background: #eef2ff;
+  color: #1f2937;
+  padding: 0.8rem 1.2rem;
+}
+
+.cart-btn,
+.primary-btn {
+  background: linear-gradient(135deg, #111827, #4f46e5);
+  color: white;
+  padding: 0.8rem 1.2rem;
+}
+
+.hero {
+  margin-top: 24px;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 14px;
+  background: #ede9fe;
+  color: #5b21b6;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1;
+}
+
+.hero-text {
+  margin: 18px 0 0;
+  color: #4b5563;
+  max-width: 560px;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-stats strong {
+  font-size: 1.35rem;
+}
+
+.hero-stats span {
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card {
+  position: relative;
+  width: min(100%, 420px);
+  height: 360px;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #e0e7ff, #f5f3ff 60%, #ffffff);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.mini-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.product-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 60%);
+  filter: blur(18px);
+}
+
+.product-box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, #111827, #4338ca);
+  border-radius: 30px;
+  transform: rotate(-12deg);
+  box-shadow: 0 28px 40px rgba(79, 70, 229, 0.25);
+}
+
+.box-shape {
+  position: absolute;
+  inset: 18% 20%;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.category-strip,
+.products-section {
+  margin-top: 24px;
+  padding: 24px 22px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.section-head a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.category-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.product-image {
+  position: relative;
+  height: 180px;
+  background: linear-gradient(135deg, #e5e7eb, #dbeafe);
+}
+
+.product-image.purple {
+  background: linear-gradient(135deg, #ddd6fe, #e9d5ff);
+}
+
+.product-image.gold {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.product-image.green {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+.product-image.blue {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-info h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.product-meta button {
+  background: #111827;
+  color: white;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.8rem;
+}
+
+.promo-banner {
+  margin-top: 26px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #111827, #312e81);
+  color: white;
+}
+
+.promo-banner p {
+  margin: 0 0 6px;
+  color: #c7d2fe;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+}
+
+.promo-banner h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar,
+  .promo-banner,
+  .top-actions,
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-shell {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}
+</style>
