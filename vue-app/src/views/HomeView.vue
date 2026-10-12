@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import ShopFront from '../components/ShopFront.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <ShopFront />
   </main>
 </template>
