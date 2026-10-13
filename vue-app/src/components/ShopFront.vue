@@ -55,7 +55,7 @@ const featuredProducts = [
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Frühjahrsangebot</p>
-        <h1>Shop smarter.</h1>
+        <h1>Shop in den Sternen.</h1>
         <p class="hero-text">
           Entdecke moderne Produkte für den Alltag – stilvoll, funktional und günstig.
         </p>
