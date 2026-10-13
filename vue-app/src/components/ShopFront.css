@@ -43,8 +43,15 @@
   border-radius: 10px;
   display: grid;
   place-items: center;
+  overflow: hidden;
   background: linear-gradient(135deg, #111827, #7c3aed);
   color: white;
+}
+
+.brand-symbol {
+  width: 114%;
+  height: 114%;
+  object-fit: cover;
 }
 
 .brand-name {

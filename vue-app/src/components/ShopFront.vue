@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import './ShopFront.css'
+import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo.png'
 
 const categories = ['Neu', 'Sale', 'Elektronik', 'Mode', 'Home', 'Sport']
 
@@ -35,7 +36,9 @@ const featuredProducts = [
   <div class="shop-shell">
     <header class="topbar">
       <div class="brand-wrap">
-        <div class="brand-mark">★</div>
+        <span class="brand-mark">
+          <img class="brand-symbol" :src="novaLogo" alt="" />
+        </span>
         <span class="brand-name">NOVA</span>
       </div>
 
