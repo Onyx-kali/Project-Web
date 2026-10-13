@@ -1,8 +1,14 @@
 import { test, expect } from '@playwright/test'
 
-// See here how to get started:
-// https://playwright.dev/docs/intro
-test('visits the app root url', async ({ page }) => {
+test('opens the homepage from the welcome button', async ({ page }) => {
   await page.goto('/')
-  await expect(page.locator('h1')).toHaveText('You did it!')
+  await expect(page.getByRole('heading', { name: 'Willkommen bei NOVA' })).toBeVisible()
+  await page.getByRole('button', { name: 'Shop entdecken' }).click()
+  await expect(page.getByRole('heading', { name: 'Shop in den Sternen.' })).toBeVisible()
+})
+
+test('opens the homepage when the welcome page is clicked', async ({ page }) => {
+  await page.goto('/')
+  await page.locator('.welcome-page').click({ position: { x: 20, y: 20 } })
+  await expect(page.getByRole('heading', { name: 'Shop in den Sternen.' })).toBeVisible()
 })
