@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo.png'
+import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo-Photoroom.png'
 
 const router = useRouter()
 
@@ -11,6 +11,15 @@ function enterShop() {
 
 <template>
   <main class="welcome-page" @click="enterShop">
+    <div class="welcome-stars" aria-hidden="true">
+      <span class="welcome-star star-one">✦</span>
+      <span class="welcome-star star-two">✧</span>
+      <span class="welcome-star star-three">✦</span>
+      <span class="welcome-star star-four">✧</span>
+      <span class="welcome-star star-five">✦</span>
+      <span class="welcome-star star-six">✧</span>
+      <span class="welcome-star star-seven">✦</span>
+    </div>
     <div class="welcome-content">
       <p class="welcome-kicker">NOVA · NEU ENTDECKEN</p>
       <img class="welcome-logo" :src="novaLogo" alt="NOVA Orbit-Logo" />
@@ -29,6 +38,11 @@ function enterShop() {
 
 <style scoped>
 .welcome-page {
+  --nova-night: #090817;
+  --nova-indigo: #241959;
+  --nova-lavender: #c4baff;
+  --nova-star: #eeeaff;
+
   position: relative;
   display: grid;
   min-height: 100vh;
@@ -36,16 +50,82 @@ function enterShop() {
   place-items: center;
   overflow: hidden;
   padding: 36px 24px;
-  color: #171821;
-  background-color: #fbfcfa;
-  background-image:
-    linear-gradient(rgba(24, 31, 28, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 31, 28, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
+  color: #f7f5ff;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(79, 56, 174, 0.38), transparent 48%),
+    radial-gradient(ellipse at 86% 92%, rgba(50, 33, 124, 0.28), transparent 42%),
+    var(--nova-night);
   cursor: pointer;
 }
 
+.welcome-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.welcome-star {
+  position: absolute;
+  color: var(--nova-star);
+  opacity: 0.72;
+  animation: star-glow 3.8s ease-in-out infinite alternate;
+}
+
+.star-one {
+  top: 14%;
+  left: 16%;
+  font-size: 1.25rem;
+}
+
+.star-two {
+  top: 25%;
+  right: 17%;
+  color: var(--nova-lavender);
+  font-size: 1.8rem;
+  animation-delay: 900ms;
+}
+
+.star-three {
+  top: 53%;
+  left: 8%;
+  font-size: 0.95rem;
+  animation-delay: 400ms;
+}
+
+.star-four {
+  top: 61%;
+  right: 9%;
+  color: var(--nova-lavender);
+  font-size: 1.2rem;
+  animation-delay: 1.4s;
+}
+
+.star-five {
+  bottom: 17%;
+  left: 23%;
+  color: var(--nova-lavender);
+  font-size: 1.5rem;
+  animation-delay: 1.1s;
+}
+
+.star-six {
+  right: 27%;
+  bottom: 13%;
+  font-size: 0.95rem;
+  animation-delay: 600ms;
+}
+
+.star-seven {
+  top: 12%;
+  right: 39%;
+  font-size: 0.8rem;
+  animation-delay: 1.8s;
+}
+
 .welcome-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   width: min(100%, 620px);
   flex-direction: column;
@@ -63,7 +143,7 @@ function enterShop() {
 }
 
 .welcome-kicker {
-  color: #50565e;
+  color: #c6beff;
 }
 
 .welcome-logo {
@@ -77,7 +157,7 @@ function enterShop() {
 
 .welcome-copy > p {
   margin: 0 0 8px;
-  color: #5d646a;
+  color: #c5c1d7;
   font-size: 1rem;
 }
 
@@ -89,7 +169,7 @@ function enterShop() {
 }
 
 .welcome-copy h1 span {
-  color: #5143ce;
+  color: var(--nova-lavender);
 }
 
 .welcome-button {
@@ -101,8 +181,8 @@ function enterShop() {
   padding: 0 26px;
   border: 0;
   border-radius: 4px;
-  color: #11140c;
-  background: #d9f36a;
+  color: #151126;
+  background: #d8d2ff;
   font: inherit;
   font-size: 1.05rem;
   font-weight: 750;
@@ -111,12 +191,12 @@ function enterShop() {
 }
 
 .welcome-button:hover {
-  background: #c8e94a;
+  background: #eeeaff;
   transform: translateY(-2px);
 }
 
 .welcome-button:focus-visible {
-  outline: 3px solid #5143ce;
+  outline: 3px solid #a99aff;
   outline-offset: 4px;
 }
 
@@ -127,15 +207,28 @@ function enterShop() {
 
 .welcome-footer {
   position: absolute;
+  z-index: 1;
   right: 28px;
   bottom: 24px;
   display: flex;
   gap: 10px;
-  color: #343a3e;
+  color: #e6e2f8;
 }
 
 .welcome-footer span {
-  color: #858b8e;
+  color: #9992bd;
+}
+
+@keyframes star-glow {
+  from {
+    opacity: 0.38;
+    transform: scale(0.86);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
 }
 
 @keyframes welcome-arrive {
@@ -178,6 +271,22 @@ function enterShop() {
 
   .welcome-copy h1 {
     font-size: 2.2rem;
+  }
+
+  .star-one {
+    left: 8%;
+  }
+
+  .star-two {
+    right: 8%;
+  }
+
+  .star-five {
+    left: 12%;
+  }
+
+  .star-six {
+    right: 13%;
   }
 
   .welcome-footer {

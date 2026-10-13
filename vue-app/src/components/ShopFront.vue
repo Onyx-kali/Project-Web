@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import './ShopFront.css'
-import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo.png'
+import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo-Photoroom.png'
 
 const categories = ['Neu', 'Sale', 'Elektronik', 'Mode', 'Home', 'Sport']
 
