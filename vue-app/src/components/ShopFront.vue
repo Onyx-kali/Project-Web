@@ -35,7 +35,7 @@ const featuredProducts = [
   <div class="shop-shell">
     <header class="topbar">
       <div class="brand-wrap">
-        <div class="brand-mark">*</div>
+        <div class="brand-mark">★</div>
         <span class="brand-name">NOVA</span>
       </div>
 
