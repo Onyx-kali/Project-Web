@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 939 825">
+  <defs>
+    <clipPath id="rounded-corners">
+      <rect width="939" height="825" rx="96" />
+    </clipPath>
+  </defs>
+  <image
+    href="./Leuchtender-Stern-mit-Orbitalring.png"
+    width="939"
+    height="825"
+    clip-path="url(#rounded-corners)"
+  />
+</svg>
