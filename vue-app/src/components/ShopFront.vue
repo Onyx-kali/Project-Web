@@ -8,7 +8,7 @@ const featuredProducts = [
     name: 'Wireless Headset',
     price: '89,99 €',
     tag: 'Top Seller',
-    accent: 'purple'
+    accent: 'bronze'
   },
   {
     name: 'Minimal Lamp',
