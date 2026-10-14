@@ -372,78 +372,270 @@ button {
   font-size: clamp(1.3rem, 3vw, 2rem);
 }
 
-.theme-dark {
+.theme-option:focus-visible {
+  outline: 3px solid #818cf8;
+  outline-offset: 3px;
+}
+
+.page-theme {
+  position: relative;
+  isolation: isolate;
+}
+
+.shop-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-onyx {
   color: #e5e7eb;
   background: #0b1020;
 }
 
-.theme-dark .shop-shell {
+.theme-onyx .shop-shell {
   color: #e5e7eb;
   background: #0b1020;
 }
 
-.theme-dark .topbar,
-.theme-dark .hero,
-.theme-dark .category-strip,
-.theme-dark .products-section {
+.theme-onyx .topbar,
+.theme-onyx .hero,
+.theme-onyx .category-strip,
+.theme-onyx .products-section {
   background: #151b2b;
   border-color: rgba(148, 163, 184, 0.14);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
 }
 
-.theme-dark .main-nav a,
-.theme-dark .hero-text,
-.theme-dark .hero-stats span {
+.theme-onyx .main-nav a,
+.theme-onyx .hero-text,
+.theme-onyx .hero-stats span {
   color: #cbd5e1;
 }
 
-.theme-dark .ghost-btn,
-.theme-dark .secondary-btn {
+.theme-onyx .ghost-btn,
+.theme-onyx .secondary-btn {
   background: #283149;
   color: #e5e7eb;
 }
 
-.theme-dark .theme-switcher {
+.theme-onyx .theme-switcher {
   background: #0f1524;
 }
 
-.theme-dark .theme-option {
+.theme-onyx .theme-option {
   color: #cbd5e1;
 }
 
-.theme-dark .theme-option.is-active {
+.theme-onyx .theme-option.is-active {
   background: #4f46e5;
   color: #fff;
   box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
 }
 
-.theme-dark .visual-card {
+.theme-onyx .visual-card {
   background: linear-gradient(145deg, #202a45, #25213d 60%, #1b2234);
 }
 
-.theme-dark .mini-tag,
-.theme-dark .product-badge {
+.theme-onyx .mini-tag,
+.theme-onyx .product-badge {
   background: rgba(21, 27, 43, 0.94);
   color: #e5e7eb;
 }
 
-.theme-dark .category-pill {
+.theme-onyx .category-pill {
   background: #283149;
   color: #e5e7eb;
 }
 
-.theme-dark .product-card {
+.theme-onyx .product-card {
   background: #1c2437;
   border-color: rgba(148, 163, 184, 0.14);
 }
 
-.theme-dark .product-meta button {
+.theme-onyx .product-meta button {
   background: #394565;
 }
 
-.theme-option:focus-visible {
-  outline: 3px solid #818cf8;
-  outline-offset: 3px;
+.theme-bismuth {
+  color: #f7f5ff;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(79, 56, 174, 0.38), transparent 48%),
+    radial-gradient(ellipse at 86% 92%, rgba(50, 33, 124, 0.28), transparent 42%), #090817;
+}
+
+.theme-bismuth .shop-shell {
+  color: #f7f5ff;
+  background: transparent;
+}
+
+.theme-bismuth .topbar,
+.theme-bismuth .hero,
+.theme-bismuth .category-strip,
+.theme-bismuth .products-section {
+  background: rgba(23, 19, 49, 0.84);
+  border-color: rgba(196, 186, 255, 0.18);
+  box-shadow: 0 14px 40px rgba(3, 2, 14, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.theme-bismuth .main-nav a,
+.theme-bismuth .hero-text,
+.theme-bismuth .hero-stats span {
+  color: #c5c1d7;
+}
+
+.theme-bismuth .eyebrow {
+  background: rgba(196, 186, 255, 0.14);
+  color: #c4baff;
+}
+
+.theme-bismuth .section-head a {
+  color: #c4baff;
+}
+
+.theme-bismuth .theme-switcher {
+  background: rgba(9, 8, 23, 0.88);
+}
+
+.theme-bismuth .theme-option {
+  color: #d8d2ff;
+}
+
+.theme-bismuth .theme-option.is-active {
+  background: #d8d2ff;
+  color: #151126;
+  box-shadow: 0 2px 10px rgba(196, 186, 255, 0.25);
+}
+
+.theme-bismuth .ghost-btn,
+.theme-bismuth .secondary-btn {
+  background: rgba(196, 186, 255, 0.14);
+  color: #eeeaff;
+}
+
+.theme-bismuth .cart-btn,
+.theme-bismuth .primary-btn {
+  background: linear-gradient(135deg, #d8d2ff, #a99aff);
+  color: #151126;
+}
+
+.theme-bismuth .visual-card {
+  background: linear-gradient(145deg, #241959, #17132f 60%, #100e24);
+  border: 1px solid rgba(196, 186, 255, 0.2);
+}
+
+.theme-bismuth .mini-tag,
+.theme-bismuth .product-badge {
+  background: rgba(9, 8, 23, 0.82);
+  color: #eeeaff;
+}
+
+.theme-bismuth .category-pill {
+  background: rgba(196, 186, 255, 0.12);
+  color: #eeeaff;
+}
+
+.theme-bismuth .product-card {
+  background: rgba(23, 19, 49, 0.92);
+  border-color: rgba(196, 186, 255, 0.16);
+}
+
+.theme-bismuth .product-meta button {
+  background: #d8d2ff;
+  color: #151126;
+}
+
+.theme-bismuth .promo-banner {
+  background: linear-gradient(135deg, #241959, #100e24);
+  border-color: rgba(196, 186, 255, 0.2);
+}
+
+.theme-bismuth .promo-banner p {
+  color: #c4baff;
+}
+
+.bismuth-stars {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bismuth-star {
+  position: absolute;
+  color: #eeeaff;
+  opacity: 0.72;
+  animation: bismuth-star-glow 3.8s ease-in-out infinite alternate;
+}
+
+.bismuth-star.star-one {
+  top: 14%;
+  left: 8%;
+  font-size: 1.25rem;
+}
+
+.bismuth-star.star-two {
+  top: 25%;
+  right: 8%;
+  color: #c4baff;
+  font-size: 1.8rem;
+  animation-delay: 900ms;
+}
+
+.bismuth-star.star-three {
+  top: 53%;
+  left: 3%;
+  font-size: 0.95rem;
+  animation-delay: 400ms;
+}
+
+.bismuth-star.star-four {
+  top: 61%;
+  right: 3%;
+  color: #c4baff;
+  font-size: 1.2rem;
+  animation-delay: 1.4s;
+}
+
+.bismuth-star.star-five {
+  bottom: 17%;
+  left: 12%;
+  color: #c4baff;
+  font-size: 1.5rem;
+  animation-delay: 1.1s;
+}
+
+.bismuth-star.star-six {
+  right: 15%;
+  bottom: 13%;
+  font-size: 0.95rem;
+  animation-delay: 600ms;
+}
+
+.bismuth-star.star-seven {
+  top: 12%;
+  right: 39%;
+  font-size: 0.8rem;
+  animation-delay: 1.8s;
+}
+
+@keyframes bismuth-star-glow {
+  from {
+    opacity: 0.38;
+    transform: scale(0.86);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bismuth-star {
+    animation: none;
+  }
 }
 
 @media (max-width: 900px) {

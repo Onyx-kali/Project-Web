@@ -3,10 +3,13 @@ import { ref } from 'vue'
 import './ShopFront.css'
 import novaLogo from '../assets/Leuchtendes NOVA-Orbit-Logo-Photoroom.png'
 
-const isDarkMode = ref(true)
+type ThemeMode = 'quartz' | 'onyx' | 'bismuth'
+
+const themeMode = ref<ThemeMode>('onyx')
 const themeModeLabels = {
-  light: 'Quartz',
-  dark: 'Onyx',
+  quartz: 'Quartz',
+  onyx: 'Onyx',
+  bismuth: 'Bismuth',
 }
 
 const categories = ['Neu', 'Sale', 'Elektronik', 'Mode', 'Home', 'Sport']
@@ -40,7 +43,16 @@ const featuredProducts = [
 </script>
 
 <template>
-  <div class="page-theme" :class="{ 'theme-dark': isDarkMode }">
+  <div class="page-theme" :class="`theme-${themeMode}`">
+    <div v-if="themeMode === 'bismuth'" class="bismuth-stars" aria-hidden="true">
+      <span class="bismuth-star star-one">✦</span>
+      <span class="bismuth-star star-two">✧</span>
+      <span class="bismuth-star star-three">✦</span>
+      <span class="bismuth-star star-four">✧</span>
+      <span class="bismuth-star star-five">✦</span>
+      <span class="bismuth-star star-six">✧</span>
+      <span class="bismuth-star star-seven">✦</span>
+    </div>
     <div class="shop-shell">
       <header class="topbar">
         <div class="brand-wrap">
@@ -62,21 +74,30 @@ const featuredProducts = [
           <div class="theme-switcher" role="group" aria-label="Darstellung">
             <button
               class="theme-option"
-              :class="{ 'is-active': !isDarkMode }"
+              :class="{ 'is-active': themeMode === 'quartz' }"
               type="button"
-              :aria-pressed="!isDarkMode"
-              @click="isDarkMode = false"
+              :aria-pressed="themeMode === 'quartz'"
+              @click="themeMode = 'quartz'"
             >
-              {{ themeModeLabels.light }}
+              {{ themeModeLabels.quartz }}
             </button>
             <button
               class="theme-option"
-              :class="{ 'is-active': isDarkMode }"
+              :class="{ 'is-active': themeMode === 'onyx' }"
               type="button"
-              :aria-pressed="isDarkMode"
-              @click="isDarkMode = true"
+              :aria-pressed="themeMode === 'onyx'"
+              @click="themeMode = 'onyx'"
             >
-              {{ themeModeLabels.dark }}
+              {{ themeModeLabels.onyx }}
+            </button>
+            <button
+              class="theme-option"
+              :class="{ 'is-active': themeMode === 'bismuth' }"
+              type="button"
+              :aria-pressed="themeMode === 'bismuth'"
+              @click="themeMode = 'bismuth'"
+            >
+              {{ themeModeLabels.bismuth }}
             </button>
           </div>
           <button class="cart-btn">Warenkorb (3)</button>
