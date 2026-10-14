@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
-import ShopFront from '..icons/ShopFront.vue'
+import ShopFront from '../ShopFront.vue'
 
 describe('ShopFront theme selector', () => {
   it('starts in Onyx and switches among all three themes', async () => {
