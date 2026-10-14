@@ -4,6 +4,15 @@
   Sie ist bewusst separat, damit HTML/Template und Styling leichter lesbar bleiben.
 */
 
+.page-theme {
+  min-height: 100vh;
+  color: #111827;
+  background: #f6f7fb;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
 .shop-shell {
   max-width: 1240px;
   margin: 0 auto;
@@ -72,6 +81,26 @@
 .top-actions {
   display: flex;
   gap: 12px;
+}
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #eef2ff;
+}
+
+.theme-option {
+  padding: 0.65rem 1rem;
+  background: transparent;
+  color: #1f2937;
+}
+
+.theme-option.is-active {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.14);
 }
 
 button {
@@ -341,6 +370,80 @@ button {
 .promo-banner h3 {
   margin: 0;
   font-size: clamp(1.3rem, 3vw, 2rem);
+}
+
+.theme-dark {
+  color: #e5e7eb;
+  background: #0b1020;
+}
+
+.theme-dark .shop-shell {
+  color: #e5e7eb;
+  background: #0b1020;
+}
+
+.theme-dark .topbar,
+.theme-dark .hero,
+.theme-dark .category-strip,
+.theme-dark .products-section {
+  background: #151b2b;
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+}
+
+.theme-dark .main-nav a,
+.theme-dark .hero-text,
+.theme-dark .hero-stats span {
+  color: #cbd5e1;
+}
+
+.theme-dark .ghost-btn,
+.theme-dark .secondary-btn {
+  background: #283149;
+  color: #e5e7eb;
+}
+
+.theme-dark .theme-switcher {
+  background: #0f1524;
+}
+
+.theme-dark .theme-option {
+  color: #cbd5e1;
+}
+
+.theme-dark .theme-option.is-active {
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
+}
+
+.theme-dark .visual-card {
+  background: linear-gradient(145deg, #202a45, #25213d 60%, #1b2234);
+}
+
+.theme-dark .mini-tag,
+.theme-dark .product-badge {
+  background: rgba(21, 27, 43, 0.94);
+  color: #e5e7eb;
+}
+
+.theme-dark .category-pill {
+  background: #283149;
+  color: #e5e7eb;
+}
+
+.theme-dark .product-card {
+  background: #1c2437;
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.theme-dark .product-meta button {
+  background: #394565;
+}
+
+.theme-option:focus-visible {
+  outline: 3px solid #818cf8;
+  outline-offset: 3px;
 }
 
 @media (max-width: 900px) {
